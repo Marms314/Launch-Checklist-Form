@@ -20,30 +20,14 @@ window.addEventListener("load", function() {
          let fuelLevel = document.querySelector("input[name=fuelLevel]");
          let cargoMass = document.querySelector("input[name=cargoMass]");
 
-
          if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
             alert("All fields are required.");
             event.preventDefault();
-         }
-
-         if (typeof(pilotName.value) !== "string") {
-            alert("Pilot input is invalid.");
+         } else if (typeof(pilotName.value) !== "string" || typeof(copilotName.value) !== "string" || isNaN(fuelLevel.value) || isNaN(cargoMass.value)) {
+            alert("Make sure to enter valid information for each field.");
             event.preventDefault();
-         }
-
-         if (typeof(copilotName.value) !== "string") {
-            alert("Copilot input is invalid.");
-            event.preventDefault();
-         }
-
-         if (isNaN(fuelLevel.value)) {
-            alert("Fuel level must be a number.");
-            event.preventDefault();
-         }
-
-         if (isNaN(cargoMass.value)) {
-            alert("Cargo mass must be a number.");
-            event.preventDefault();
+         } else {
+            console.log("All good.")
          }
       });
    });
