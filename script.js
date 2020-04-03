@@ -36,8 +36,13 @@ window.addEventListener("load", function() {
             event.preventDefault();
          }
 
-         if (isNaN(fuelLevel.value) || isNaN(cargoMass.value)) {
-            alert("Fuel level and Cargo mass must be numbers.");
+         if (isNaN(fuelLevel.value)) {
+            alert("Fuel level must be a number.");
+            event.preventDefault();
+         }
+
+         if (isNaN(cargoMass.value)) {
+            alert("Cargo mass must be a number.");
             event.preventDefault();
          }
       });
